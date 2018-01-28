@@ -18,7 +18,7 @@ Parse.Cloud.define("import", function (request, response) {
       myClassObject.set(column, rows[i][column]);
     }
 
-    promises.push(myClassObject.save());
+    promises.push(myClassObject.save({ useMasterKey: true }));
   }
 
   Parse.Promise
